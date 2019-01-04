@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report>
+    <Page Width="40" Height="30" Gap="2">
+        <Line X="120" Y="20" font="TSS24.BF2">
+            <Variable name="BRAND_NAME" />
+        </Line>
+        <Line X="25" Y="40" font="TSS24.BF2">
+            <Text>——————————————————</Text>
+        </Line>
+        <Line X="25" Y="60" font="TSS24.BF2">
+            <Variable name="CODE" />
+            <Text>(</Text>
+            <Variable name="ARTICLE_NUMBER" />
+            <Text>)</Text>
+        </Line>
+        <Line X="250" Y="60" font="TSS24.BF2">
+            <Variable name="DISTRIBUTION_MODE" />
+        </Line>
+        <Line X="25" Y="100" font="1">
+            <Variable name="DATETIME" />
+        </Line>
+        <Line X="25" Y="130" font="TSS24.BF2">
+            <Variable name="ARTICLE_NAME" />
+        </Line>
+        <Line X="290" Y="133" font="TSS24.BF2">
+            <Text>*</Text>
+        </Line>
+        <Line X="305" Y="130" font="TSS24.BF2">
+            <Variable name="ARTICLE_COUNT" />
+        </Line>
+        <Line X="25" Y="170" font="TSS24.BF2">
+            <Variable name="SPEC" />
+        </Line>
+        <Line X="235" Y="170" font="TSS24.BF2">
+            <Variable name="ARTICLE_PRICE" />
+        </Line>
+        <Line X="25" Y="200" font="TSS24.BF2">
+            <Text>——————————————————</Text>
+        </Line>
+        <Line X="25" Y="220" font="TSS24.BF2">
+            <Variable name="RESTAURANT_NAME" />
+        </Line>
+        <Line X="180" Y="220" font="TSS24.BF2">
+            <Variable name="CUSTOMER_TEL" />
+        </Line>
+    </Page>
+</Report>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report>
+  <Command>INIT</Command>
+  <Command>SMOOTH</Command>
+  <Include>./report/platform_header.xml</Include>
+  <Line align="LEFT" font="FONT_A">
+    <Variable name="PLATFORM_NAME" datatype="STRING" format="-20" font="FONT_A_HW"/>
+	<Variable name="ORDER_NUMBER" datatype="STRING" format="4" font="FONT_A_HW"/>
+  </Line>
+  <Line align="LEFT" font="FONT_A">
+    <Text>订单流水号：</Text>
+    <Variable name="ORDER_ID" datatype="STRING" format="-25"/>
+  </Line>
+  <Line align="LEFT" font="FONT_A">
+    <Text>下单时间：</Text>
+    <Variable name="DATETIME" datatype="STRING" format="-25"/>
+  </Line>
+  <Line align="LEFT" font="FONT_A">
+       <Pad width="48" char="-" />
+  </Line>
+  <Line align="LEFT"  font="FONT_A">
+    <Text font="FONT_A_HW">备注：</Text>
+    <Variable name="MEMO" datatype="STRING"  font="FONT_A_HW"/>
+  </Line>
+  <Include>./report/order_items.xml</Include>
+  <Include>./report/platform_order_total.xml</Include>
+  <Line />
+  <Line align="LEFT"  font="FONT_A">
+    <Text font="FONT_A_HW">收货地址：</Text>
+    <Variable name="CUSTOMER_ADDRESS" datatype="STRING"  font="FONT_A_HW"/>
+  </Line>
+  <Line align="LEFT" font="FONT_A">
+    <Variable name="USER_NAME" datatype="STRING"  font="FONT_A_HW"/>
+  </Line>
+  <Line align="LEFT" font="FONT_A_HW">
+    <Variable name="USER_MOBILE" datatype="INT"  font="FONT_A_HW"/>
+  </Line>
+  <Line align="CENTER">
+  <Text >地址：</Text>
+  <Variable name="RESTAURANT_ADDRESS" datatype="STRING" font="FONT_A"/>
+</Line>
+  <Line align="CENTER">
+    <Text >谢谢惠顾，欢迎再次光临！</Text>
+  </Line>
+  <Line /><Line />
+  <Command>CUT</Command>
+</Report>
+

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>餐加POS客户端</title>
+    <style type="text/css">
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+            user-select: none;
+        }
+
+        .logo {
+            width: 400px;
+            /* width / height = 5.4*/
+            height: 75px;
+            margin-top: 5%;
+            margin-bottom: 1%;
+        }
+
+        img {
+            margin-top: -43px;
+        }
+
+        .content {
+            /*margin-top: 80px;*/
+        }
+
+        .code-input {
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+            background-color: #eee;
+            border: none;
+            margin-top: 55px;
+            /*font-weight: bold;*/
+            /*border-top: none;*/
+            /*border-left: none;*/
+            /*border-right: none;*/
+            /*border-bottom: 2px solid #6A7989;*/
+            outline: none;
+        }
+
+        .code-line {
+            height: 8px;
+            border: none;
+            border-top: 1px solid #eee;
+            width: 30px;
+            /*margin: 50px 20px;*/
+            margin: 0px;
+            line-height: 50px;
+            vertical-align: center;
+            display: inline-block;
+        }
+
+        .btn-activation {
+            width: 250px;
+            height: 50px;
+            margin-top: 72px;
+            font-size: 22px;
+            color: #FFFFFF;
+            border-radius: 4px;
+            background-color: #000000;
+            border: 1px solid #6A7989;
+            cursor: pointer;
+        }
+
+        .btn-activation:disabled {
+            /*opacity: 0.6;*/
+            cursor: not-allowed;
+        }
+
+        .keybord {
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            height: 35%;
+            width: 20%;
+            min-height: 300px;
+            min-width: 300px;
+            border: 1px solid rgba(255, 255, 255, .8);
+            font-size: 0px;
+            padding: 0px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-items: center;
+            border-radius: 5px;
+            background: linear-gradient(60deg, rgba(158, 180, 185, 1), rgba(222, 157, 193, 1) 50%, rgba(169, 156, 173, 1) 100%);
+            box-shadow: 0 0.05em 0.1em rgba(0, 0, 0, .5);
+        }
+
+        .keybord > span {
+            display: inline-block;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            width: 25%;
+            height: 20%;
+            border: 1px solid rgba(255, 255, 255, .8);
+            cursor: pointer;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgba(255, 255, 255, .8);
+            box-shadow: 0 0.2em 0.4em rgba(0, 0, 0, .5);
+        }
+
+        .loading {
+            position: fixed;
+            z-index: 10000;
+            background-color: hsla(0, 0%, 100%, .9);
+            margin: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transition: opacity .3s;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .loading-content {
+            width: 300px;
+            height: 300px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .right-info {
+            width: 294px;
+            height: 40px;
+            background-color: #000;
+            color: #fff;
+            line-height: 40px;
+            position: absolute;
+            right: 0;
+            top: 44px;
+            border-radius: 45px 0 0 45px;
+        }
+    </style>
+    <!--<script src="main.js"></script>-->
+    <script src="webServer.js"></script>
+</head>
+
+<body style="background: #eeeeee;">
+<!--<img src="./img/RESTO+.png" class="logo" alt="resto-logo">-->
+<!--<h2>欢迎使用Resto+餐饮管理系统</h2>-->
+<div style="height: 380px;width: 633px; margin: 142px auto 0px auto; background: #FFFFFF;">
+    <img src="./assets/logo.jpg" alt="resto-logo" style="height: 86px;width: 86px;">
+    <div class="content">
+        <p style="margin-top: 32px;font-size: 22px;color: #666 ">请输入产品激活码</p>
+        <input type="text" name="" class="code-input" autofocus autoComplete="off"/>
+        <hr class="code-line"/>
+        <input type="text" name="" class="code-input" autoComplete="off"/>
+        <hr class="code-line"/>
+        <input type="text" name="" class="code-input" autoComplete="off"/>
+        <hr class="code-line"/>
+        <input type="text" name="" class="code-input" autoComplete="off"/>
+        <br>
+        <button class="btn-activation" disabled id="activation">立即使用</button>
+    </div>
+</div>
+<div class="right-info">欢迎使用Resto+餐饮管理系统</div>
+<div class="keybord">
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+    <span>4</span>
+    <span>5</span>
+    <span>6</span>
+    <span>7</span>
+    <span>8</span>
+    <span>9</span>
+    <span>清空</span>
+    <span>0</span>
+    <span>退格</span>
+</div>
+<div class="loading hide">
+    <div class="loading-content">
+        正在激活 ...
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var http = require('http');
+    var toString = require('querystring');
+    var javaServerConfigPath = './app/dao/config/pro/index.js';
+    var javaServerConfigJson = require(javaServerConfigPath);
+    var httpClientConfig = javaServerConfigJson.java_server_db;
+    var fs = require('fs');
+
+    /**
+     * author：lmx
+     * describe：RestoPos 产品激活页面
+     * createTime：2017年9月14日 11:08:21
+     */
+    window.onload = function () {
+        var k = {
+            focusPreInput: function () {
+                var preElem = currentInput.previousElementSibling.previousElementSibling;
+                if (preElem) {
+                    preElem.focus();
+                    currentInput = preElem;
+                }
+            },
+            focusNextInput: function () {
+
+            },
+        };
+        //  获取所有的文本框
+        var codeInputs = document.getElementsByClassName("code-input");
+        //  激活按钮
+        var activationBtn = document.getElementById("activation");
+        //  设置当前选中的文本框（默认为第一个）
+        var currentInput = codeInputs[0];
+
+        var loading = '';
+        //  绑定文本框事件
+        for (var i = 0; i < codeInputs.length; i++) {
+            //  自动切换
+            codeInputs[i].addEventListener("input", function (e) {
+                activationBtn.disabled = true;
+                if (this.value.length == 0) {
+                    console.log("pre input ... ");
+                    var preElem = this.previousElementSibling.previousElementSibling;
+                    if (preElem && !e.detail) {
+                        preElem.focus();
+                        currentInput = preElem;
+                    }
+                }
+                if (this.value.length >= 4) {
+                    this.value = this.value.substring(0, 4);
+                    var nextElem = this.nextElementSibling.nextElementSibling;
+                    if (nextElem.type == "text") {
+                        console.log("next input ... ");
+                        nextElem.focus();
+                        currentInput = nextElem;
+                    } else {
+                        activationBtn.disabled = false;
+                    }
+                }
+                if (this.selectionStart == 0 && this.value.length > 0) {
+                    this.setSelectionRange(this.value.length, this.value.length);
+                }
+            });
+
+            //  切换当前选中的文本框，并且将光标移动到最后一位。
+            codeInputs[i].addEventListener("click", function () {
+                currentInput = this;
+                if (this.selectionStart < this.value.length) {
+                    var that = this;
+                    setTimeout(function function_name(argument) {
+                        that.setSelectionRange(that.value.length, that.value.length);
+                    }, 1);
+                }
+            });
+
+            //  绑定 键盘删除键
+            codeInputs[i].addEventListener("keydown", function (e) {
+                if (e.key == "Backspace" && currentInput.value.length == 0) {
+                    k.focusPreInput();
+                } else if (e.key == "Enter") {
+                    activationBtn.click();
+                }
+            });
+        }
+        ;
+
+
+        //  绑定虚拟键盘事件
+        var keybord = document.getElementsByClassName("keybord")[0];
+        var keys = keybord.querySelectorAll("span");
+        for (var i = 0; i < keys.length; i++) {
+            var key = keys[i];
+            key.addEventListener("click", function () {
+                var option = null;
+                var val = this.innerText;
+                console.log(val);
+                if (val == "退格") {
+                    currentInput.value = currentInput.value.substring(0, currentInput.value.length - 1);
+                } else if (val == "清空") {
+                    currentInput.value = "";
+                    option = {
+                        empty: true
+                    };
+                } else {
+                    currentInput.value += val;
+                }
+                currentInput.focus();
+                currentInput.dispatchEvent(new CustomEvent('input', {
+                    detail: option
+                }));
+            })
+        }
+        ;
+
+        //  激活按钮
+        activationBtn.addEventListener("click", function () {
+            var activationKey = "";
+            for (var i = 0; i < codeInputs.length; i++) {
+                activationKey += codeInputs[i].value;
+            }
+            console.log(activationKey);
+
+            //数据同步
+            if (activationKey.trim().length > 0 && activationKey.trim().length <= 16) {
+                httpClientConfig.path = "/pos/LocalPosSyncData/checkKey";
+                var req = http.request(httpClientConfig, function (res) {
+                    res.setEncoding('utf-8');
+                    var result = "";
+                    res.on('data', function (data) {
+                        result += data;
+                    }).on('end', function () {
+                        result = JSON.parse(result || {});
+                        if (result.success) {
+                            //开始播放动画
+                            loading = document.getElementsByClassName("loading")[0];
+                            loading.classList.remove("hide");
+
+                            //修改本地的网络请求配置文件
+                            //原始路径重置
+                            httpClientConfig.path = "/pos/LocalPosSyncData/";
+                            httpClientConfig.key = activationKey.trim();
+                            httpClientConfig.updateTime = Date.now().toString();
+                            //将brandId和shopId 写入本地文件
+                            httpClientConfig.brandId = result.data.brandId;
+                            httpClientConfig.shopId = result.data.shopId;
+
+                            var updateConfig = JSON.stringify(javaServerConfigJson);
+                            fs.writeFile(javaServerConfigPath, "module.exports =" + updateConfig);
+                            //拉取数据并同步到数据库
+                            syncServerConfig();
+                        } else {
+                            alert(result.message || "产品激活码无效！");
+                            console.log("\n【Response Error】\n");
+                            console.log(result.message);
+                        }
+                    }).on('error', function (err) {
+                        console.log(err);
+                        alert(err.toString());
+                    });
+                });
+                req.write(toString.stringify({
+                    key: activationKey.trim()
+                }));
+                req.end();
+            } else {
+                alert("产品激活码格式错误！");
+            }
+        });
+
+        //  点击空白处，自动切换到当前文本框
+        document.addEventListener("click", function () {
+            currentInput.focus();
+        });
+
+        const syncServerConfig = function () {
+            let httpClientConfigObj = Object.assign({}, httpClientConfig);
+            httpClientConfigObj.path = "/pos/LocalPosSyncData/getServerAddress";
+            var req = http.request(httpClientConfigObj, function (res) {
+                res.setEncoding('utf-8');
+                var result = "";
+                res.on('data', function (data) {
+                    result += data;
+                }).on('end', function () {
+                    console.log("\n\n");
+                    console.log(result);
+                    if (result == "") {
+                        alert("请检查访问路径：" + httpClientConfigObj.host);
+                        return;
+                    }
+                    result = JSON.parse(result || {});
+                    if (result.success) {
+                        if (!result.data || !result.data.serverIp) {
+                            return alert("请联系管理员设置 ws 地址！")
+                        }
+                        if (!result.data || !result.data.posWebUrl) {
+                            return alert("请联系管理员设置 server 地址！")
+                        }
+                        if (result.data.posWebUrl.indexOf("http") === -1) {
+                            return alert("server 地址格式不正确！")
+                        }
+
+                        setServerAddress(formatServerAddress(result.data.posWebUrl), formatServerAddressPort(result.data.posWebUrl), result.data.serverIp, function () {
+                            var dataSync = require('./app/dao/sqlite/pos/initData');
+                            dataSync.allData(1, function (err) {
+                                loading.classList.add("hide");
+                                alert("更新完毕，点击确定后，将自动重启应用程序！");
+                                appRestart();
+
+                            });
+                        });
+                    } else {
+                        alert(result.message || "设置服务器地址失败");
+                    }
+                }).on('error', function (err) {
+                    console.log(err);
+                    alert(err.toString());
+                });
+            });
+            req.write(toString.stringify({
+                brandId: httpClientConfigObj.brandId,
+                shopId: httpClientConfigObj.shopId
+            }));
+            req.end();
+        };
+
+        const setServerAddress = function (serverAddress, port, serverIp, cb) {
+            var javaServerConfigPath = './app/dao/config/pro/index.js';
+            var javaServerConfigJson = require(javaServerConfigPath);
+            javaServerConfigJson.java_server_db.host = serverAddress;
+            javaServerConfigJson.java_server_db.port = port;
+            javaServerConfigJson.java_server_db.serverIp = serverIp;
+            var updateConfig = JSON.stringify(javaServerConfigJson);
+            fs.writeFile(javaServerConfigPath, "module.exports =" + updateConfig, (err) => {
+                if (err) {
+                    alert("更新 posServerConfig 文件出错：" + err.toString());
+                    return;
+                }
+                console.log("server：" + serverAddress);
+                cb && cb();
+            });
+        };
+
+        const appRestart = function () {
+            var child,
+                child_process = require("child_process"),
+                gui = require('nw.gui'),
+                win = gui.Window.get();
+            if (process.platform == "darwin") {
+                child = child_process.spawn("open", ["-n", "-a", process.execPath.match(/^([^\0]+?\.app)\//)[1]], {detached: true});
+            } else {
+                child = child_process.spawn(process.execPath, [], {detached: true});
+            }
+            child.unref();
+            win.hide();
+            gui.App.quit();
+        };
+
+        const formatServerAddress = function (url) {
+            return url.substring(url.indexOf("//") + 2, url.lastIndexOf(":"));
+        };
+
+        const formatServerAddressPort = function (url) {
+            return url.substring(url.lastIndexOf(":") + 1, url.lastIndexOf("/"));
+        }
+    };
+</script>
+</body>
+
+</html>

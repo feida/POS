@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report>
+  <Page Width="40" Height="30" Gap="2">
+	<Line X="15" Y="10" font="TSS24.BF2">
+      <Variable name="RESTAURANT_NAME" />
+    </Line>
+	<Line X="15" Y="40" font="TSS24.BF2">
+      <Text>外卖(</Text>
+	  <Variable name="ARTICLE_NUMBER" />
+	  <Text>)</Text>
+    </Line>
+	<Line X="170" Y="40" font="TSS24.BF2">
+	  <Variable name="CUSTOMER_TEL" />
+    </Line>
+	<Line X="65" Y="75" font="1">
+      <Variable name="DATETIME" />
+    </Line>
+	<Line X="15" Y="85" font="3">
+      <Text>------------------</Text>
+    </Line>
+    <Line X="15" Y="110" font="TSS24.BF2">
+      <Variable name="ARTICLE_NAME" />
+    </Line>
+	<Line X="15" Y="133" font="3">
+      <Text>------------------</Text>
+    </Line>
+	<Multiline X="15" Y="155" font="TSS24.BF2" rows="2" cols="12" lineHeight="25">
+      <Text>地址：</Text>
+      <Variable name="CUSTOMER_ADDRESS" />
+    </Multiline>
+	<Line X="25" Y="210" font="TSS24.BF2">
+	  <Text>加盟热线：</Text>
+      <Text>4000 810 107</Text>
+    </Line>
+  </Page>
+</Report>

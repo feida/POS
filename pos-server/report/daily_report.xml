@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report>
+    <Command>INIT</Command>
+    <Command>SMOOTH</Command>
+    <Line align="CENTER">
+        <Variable name="RESTAURANT_NAME" datatype="STRING" font="FONT_A_HW"/>
+    </Line>
+    <Line align="CENTER">
+        <Variable name="DATE" datatype="STRING" font="FONT_A_HW"/>
+    </Line>
+    <Line align="LEFT" font="FONT_A">
+        <Pad width="48" char="-" />
+    </Line>
+    <Line align="LEFT" font="FONT_A">
+        <Text font="FONT_A_HW">订单总额</Text>
+        <Pad width="2" char=" "/>
+        <Variable name="TOTAL_AMOUNT" datatype="DECIMAL" format="14" font="FONT_A_HW"/>
+    </Line>
+    <Line align="LEFT" font="FONT_A">
+        <Text font="FONT_A">有效订单数</Text>
+        <Variable name="ORDER_AMOUNT" datatype="INT" format="38" font="FONT_A"/>
+    </Line>
+    <Line align="LEFT" font="FONT_A">
+        <Text font="FONT_A">订单均额</Text>
+        <Variable name="ORDER_AVERAGE" datatype="DECIMAL" format="40" font="FONT_A"/>
+    </Line>
+    <Line align="LEFT" font="FONT_A">
+        <Text font="FONT_A">就餐人数</Text>
+        <Variable name="CUSTOMER_AMOUNT" datatype="INT" format="40" font="FONT_A"/>
+    </Line>
+    <Line align="LEFT" font="FONT_A">
+        <Text font="FONT_A">人均消费</Text>
+        <Variable name="CUSTOMER_AVERAGE" datatype="DECIMAL" format="40" font="FONT_A"/>
+    </Line>
+    <Line align="LEFT" font="FONT_A">
+        <Pad width="48" char="-" />
+    </Line>
+    <Line align="LEFT" font="FONT_A">
+        <Text font="FONT_A_HW">实收金额</Text>
+        <Pad width="2" char=" "/>
+        <Variable name="INCOME_AMOUNT" datatype="DECIMAL" format="14" font="FONT_A_HW"/>
+    </Line>
+    <Lines datasource="INCOME_ITEMS">
+        <Line align="LEFT" font="FONT_A">
+            <Variable name="PAYMENT_MODE" datasource="PAYMENT_ITEMS" datatype="STRING" format="-34" font="FONT_A"/>
+            <Variable name="SUBTOTAL" datasource="PAYMENT_ITEMS" datatype="DECIMAL" format="14" font="FONT_A"/>
+        </Line>
+    </Lines>
+    <Line align="LEFT" font="FONT_A">
+        <Pad width="48" char="-" />
+    </Line>
+
+    <Line align="LEFT" font="FONT_A">
+        <Text font="FONT_A_HW">折扣金额</Text>
+        <Pad width="2" char=" "/>
+        <Variable name="DISCOUNT_AMOUNT" datatype="DECIMAL" format="14" font="FONT_A_HW"/>
+    </Line>
+    <Lines datasource="DISCOUNT_ITEMS">
+        <Line align="LEFT" font="FONT_A">
+            <Variable name="PAYMENT_MODE" datasource="DISCOUNT_ITEMS" datatype="STRING" format="-34" font="FONT_A"/>
+            <Variable name="SUBTOTAL" datasource="DISCOUNT_ITEMS" datatype="DECIMAL" format="14" font="FONT_A"/>
+        </Line>
+    </Lines>
+    <Line align="LEFT" font="FONT_A">
+        <Pad width="48" char="-" />
+    </Line>
+    <Line align="LEFT" font="FONT_A">
+        <Text font="FONT_A_HW">复核金额</Text>
+    </Line>
+    <lines>
+        <Line align="LEFT" font="FONT_A">
+            <Text font="FONT_A">浮动零用金</Text>
+            <Variable name="EMERSION_CASH_PAY" datatype="DECIMAL" format="38" font="FONT_A"/>
+        </Line>
+        <Line align="LEFT" font="FONT_A">
+            <Text align="LEFT" font="FONT_A">浮动零找金</Text>
+            <Variable name="EMERSION_INCOME_PAY" datatype="DECIMAL" format="38" font="FONT_A"/>
+        </Line>
+    </lines>
+    <Line align="LEFT" font="FONT_A">
+        <Pad width="48" char="-" />
+    </Line>
+    <Line align="LEFT" font="FONT_A">
+        <Text font="FONT_A_HW">退菜总金额</Text>
+        <Pad width="2" char=" "/>
+        <Variable name="CANCELED_ORDER_AMOUNT" datatype="DECIMAL" format="12" font="FONT_A_HW"/>
+    </Line>
+    <Lines datasource="REFUNDS_ITEMS">
+        <Line align="LEFT" font="FONT_A">
+            <Variable name="PAYMENT_MODE" datasource="REFUNDS_ITEMS" datatype="STRING" format="-34" font="FONT_A"/>
+            <Variable name="SUBTOTAL" datasource="REFUNDS_ITEMS" datatype="DECIMAL" format="14" font="FONT_A"/>
+        </Line>
+    </Lines>
+    <Line align="LEFT" font="FONT_A">
+        <Pad width="48" char="-" />
+    </Line>
+    <Line align="LEFT" font="FONT_A">
+        <Text font="FONT_A_HW">充值金额</Text>
+        <Pad width="2" char=" "/>
+        <Variable name="STORED_VALUE_AMOUNT" datatype="DECIMAL" format="14" font="FONT_A_HW"/>
+    </Line>
+    <Line align="LEFT" font="FONT_A">
+        <Text font="FONT_A_HW">充值单数</Text>
+        <Pad width="2" char=" "/>
+        <Variable name="STORED_VALUE_COUNT" datatype="INT" format="14" font="FONT_A_HW"/>
+    </Line>
+    <Lines datasource="STORED_VALUE_ITEMS">
+        <Line align="LEFT" font="FONT_A">
+            <Text font="FONT_A">手机号:</Text>
+            <Variable name="TEL" datasource="STORED_VALUE_ITEMS" datatype="STRING" format="-18" font="FONT_A"/>
+            <Text font="FONT_A" >充值金额:</Text>
+            <Variable name="SUBTOTAL" datasource="STORED_VALUE_ITEMS" datatype="DECIMAL" format="14" font="FONT_A"/>
+        </Line>
+    </Lines>
+    <Line align="LEFT" font="FONT_A">
+        <Pad width="48" char="-" />
+    </Line>
+    <Line align="LEFT" font="FONT_A">
+        <Text font="FONT_A_HW">菜品销量</Text>
+        <Pad width="2" char=" "/>
+        <Variable name="SALED_PRODUCT_AMOUNT" datatype="INT" format="14" font="FONT_A_HW"/>
+    </Line>
+    <Lines datasource="SALED_PRODUCTS">
+        <Line align="LEFT" font="FONT_A">
+            <Variable name="PRODUCT_NAME" datasource="SALED_PRODUCTS" datatype="STRING" format="-34" font="FONT_A"/>
+            <Variable name="SUBTOTAL" datasource="SALED_PRODUCTS" datatype="DECIMAL" format="14" font="FONT_A"/>
+        </Line>
+    </Lines>
+    <Line align="LEFT" font="FONT_A">
+        <Pad width="48" char="-" />
+    </Line>
+    <Line align="LEFT" font="FONT_A">
+        <Text font="FONT_A_HW">退菜数量</Text>
+        <Pad width="2" char=" "/>
+        <Variable name="CANCELED_PRODUCT_COUNT" datatype="INT" format="14" font="FONT_A_HW"/>
+    </Line>
+    <Lines datasource="CANCELED_PRODUCTS">
+        <Line align="LEFT" font="FONT_A">
+            <Variable name="PRODUCT_NAME" datasource="CANCELED_PRODUCTS" datatype="STRING" format="-34" font="FONT_A"/>
+            <Variable name="SUBTOTAL" datasource="CANCELED_PRODUCTS" datatype="DECIMAL" format="14" font="FONT_A"/>
+        </Line>
+    </Lines>
+    <Line align="LEFT" font="FONT_A">
+        <Pad width="48" char="-" />
+    </Line>
+    <Line align="LEFT" font="FONT_A">
+        <Text font="FONT_A_HW">退菜订单数</Text>
+        <Pad width="2" char=" "/>
+        <Variable name="CANCELED_ORDER_COUNT" datatype="INT" format="12" font="FONT_A_HW"/>
+    </Line>
+    <Lines datasource="CANCELED_ORDERS">
+        <Line align="LEFT" font="FONT_A">
+            <Text font="FONT_A">支付单号：</Text>
+            <Variable name="ORDER_NUMBER" datasource="CANCELED_ORDERS" datatype="STRING" format="-38" font="FONT_A"/>
+        </Line>
+        <Line align="LEFT" font="FONT_A">
+            <Text font="FONT_A">手机号:</Text>
+            <Variable name="TEL" datasource="CANCELED_ORDERS" datatype="STRING" format="-18" font="FONT_A"/>
+            <Text font="FONT_A" >退菜金额:</Text>
+            <Variable name="SUBTOTAL" datasource="CANCELED_ORDERS" datatype="DECIMAL" format="14" font="FONT_A"/>
+        </Line>
+    </Lines>
+    <Line align="LEFT" font="FONT_A">
+        <Text font="FONT_A_HW">取消订单数</Text>
+        <Pad width="2" char=" "/>
+        <Variable name="CANCEL_ORDER_COUNT" datatype="INT" format="12" font="FONT_A_HW"/>
+    </Line>
+    <Lines datasource="CANCEL_ORDERS">
+        <Line align="LEFT" font="FONT_A">
+            <Text font="FONT_A">订单编号：</Text>
+            <Variable name="CANCEL_ORDER_NUMBER" datasource="CANCEL_ORDERS" datatype="STRING" format="-38" font="FONT_A"/>
+        </Line>
+    </Lines>
+    <Line align="LEFT" font="FONT_A">
+        <Pad width="48" char="-" />
+    </Line>
+    <lines>
+        <Line align="LEFT" font="FONT_A">
+            <Text font="FONT_A_HW">赠菜金额 </Text>
+        </Line>
+        <Line align="LEFT" font="FONT_A">
+            <Text font="FONT_A">赠菜总金额</Text>
+            <Variable name="GRANT_AMOUNT" datatype="DECIMAL" format="38" font="FONT_A"/>
+        </Line>
+        <Line align="LEFT" font="FONT_A">
+            <Text align="LEFT" font="FONT_A">赠菜订单数</Text>
+            <Variable name="GRANT_TOTAL" datatype="DECIMAL" format="38" font="FONT_A"/>
+        </Line>
+        <Line align="LEFT" font="FONT_A">
+            <Text align="LEFT" font="FONT_A">赠菜总数量</Text>
+            <Variable name="GRANT_ITEM_TOTAL" datatype="DECIMAL" format="38" font="FONT_A"/>
+        </Line>
+    </lines>
+
+    <Line /><Line /><Line /><Line /><Line /><Line />
+    <Command>CUT</Command>
+</Report>

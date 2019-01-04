@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report>
+  <Line align="LEFT" font="FONT_A">
+    <Pad width="42" char="-" />
+  </Line>
+  <Line align="LEFT" font="FONT_A">
+	<Variable name="CUSTOMER_SATISFACTION" datatype="STRING" format="-5" font="FONT_A_HW" />
+	<Pad width="7" char=" "  font="FONT_A"/>
+    <Variable name="CUSTOMER_SATISFACTION_DEGREE" datatype="DECIMAL" format="4" font="FONT_A_HW" />
+  </Line>
+  <Line align="LEFT" font="FONT_A">
+	<Variable name="CUSTOMER_PROPERTY" datatype="STRING" />
+  </Line>
+  <Line align="LEFT" font="FONT_A">
+    <Pad width="42" char="-" />
+  </Line>
+</Report>

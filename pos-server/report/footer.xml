@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report>
+  <Line align="CENTER" font="FONT_A">
+    <Variable name="WELCOME" datatype="STRING"/>
+  </Line>
+</Report>

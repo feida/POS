@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<POSDeviceCommandSets>
+  
+  <CommandSet Name="ESCPOS">
+    
+    <Command>
+      <Name>INIT</Name>
+      <Value>27</Value>
+      <Value>64</Value>
+    </Command>
+    
+    <Command>
+      <Name>HT</Name>
+      <Value>9</Value>
+    </Command>
+
+    <Command>
+      <Name>LF</Name>
+      <Value>10</Value>
+    </Command>
+
+    <Command>
+      <Name>CR</Name>
+      <Value>13</Value>
+    </Command>
+
+    <Command>
+      <Name>LEFT</Name>
+      <Value>27</Value>
+      <Value>97</Value>
+      <Parameter>0</Parameter>
+    </Command>
+
+    <Command>
+      <Name>CENTER</Name>
+      <Value>27</Value>
+      <Value>97</Value>
+      <Parameter>1</Parameter>
+    </Command>
+
+    <Command>
+      <Name>RIGHT</Name>
+      <Value>27</Value>
+      <Value>97</Value>
+      <Parameter>2</Parameter>
+    </Command>
+
+    <Command>
+      <Name>FONT_A</Name>
+      <Value>27</Value>
+      <Parameter>33</Parameter>
+      <Parameter>0</Parameter>
+    </Command>
+
+    <Command>
+      <Name>FONT_A_H</Name>
+      <Value>27</Value>
+      <Parameter>33</Parameter>
+      <Parameter>16</Parameter>
+    </Command>
+
+    <Command>
+      <Name>FONT_A_W</Name>
+      <Value>27</Value>
+      <Parameter>33</Parameter>
+      <Parameter>32</Parameter>
+    </Command>
+
+    <Command>
+      <Name>FONT_A_HW</Name>
+      <Value>27</Value>
+      <Parameter>33</Parameter>
+      <Parameter>48</Parameter>
+    </Command>
+
+    <Command>
+      <Name>FONT_B</Name>
+      <Value>27</Value>
+      <Parameter>33</Parameter>
+      <Parameter>1</Parameter>
+    </Command>
+
+    <Command>
+      <Name>FONT_B_H</Name>
+      <Value>27</Value>
+      <Parameter>33</Parameter>
+      <Parameter>17</Parameter>
+    </Command>
+
+    <Command>
+      <Name>FONT_B_W</Name>
+      <Value>27</Value>
+      <Parameter>33</Parameter>
+      <Parameter>33</Parameter>
+    </Command>
+
+    <Command>
+      <Name>FONT_B_HW</Name>
+      <Value>27</Value>
+      <Parameter>33</Parameter>
+      <Parameter>49</Parameter>
+    </Command>
+
+    <Command>
+      <Name>IMAGE_NV</Name>
+      <Value>28</Value>
+      <Value>112</Value>
+      <Parameter>1</Parameter>
+      <Parameter>48</Parameter>
+    </Command>
+
+    <Command>
+      <Name>BLACK_OFF</Name>
+      <Value>29</Value>
+      <Value>66</Value>
+      <Parameter>0</Parameter>
+    </Command>
+
+    <Command>
+      <Name>BLACK_ON</Name>
+      <Value>29</Value>
+      <Value>66</Value>
+      <Parameter>1</Parameter>
+    </Command>
+
+	<Command>
+      <Name>CUT</Name>
+      <Value>29</Value>
+      <Value>86</Value>
+      <Parameter>66</Parameter>
+      <Parameter>1</Parameter>
+    </Command>
+
+    <Command>
+      <Name>SMOOTH</Name>
+      <Value>29</Value>
+      <Value>98</Value>
+      <Parameter>1</Parameter>
+    </Command>
+
+    <Command>
+      <Name>CASH_DRAWER</Name>
+      <Value>27</Value>
+      <Value>112</Value>
+      <Parameter>0</Parameter>
+      <Parameter>16</Parameter>
+      <Parameter>255</Parameter>
+    </Command>
+
+    <Command>
+      <Name>HL</Name>
+      <Value>169</Value>
+	  <Value>165</Value>
+    </Command>
+
+	<Command>
+      <Name>PRINTER_STATUS</Name>
+      <Value>16</Value>
+	  <Value>4</Value>
+	  <Parameter>1</Parameter>
+    </Command>
+
+	<Command>
+      <Name>PRINTER_PAPER_STATUS</Name>
+      <Value>16</Value>
+	  <Value>4</Value>
+	  <Parameter>4</Parameter>
+    </Command>
+
+	<Command>
+      <Name>FRENCH_CHAR_SET</Name>
+      <Value>27</Value>
+	  <Value>82</Value>
+	  <Parameter>4</Parameter>
+    </Command>
+
+	<Command>
+      <Name>FRENCH_E</Name>
+	  <Value>168</Value>
+      <Value>136</Value>
+    </Command>
+
+	<Command>
+      <Name>CHINESE_MODE</Name>
+      <Value>28</Value>
+	  <Value>38</Value>
+    </Command>
+
+  </CommandSet>
+
+</POSDeviceCommandSets>

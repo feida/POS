@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report>
+  <Command>INIT</Command>
+  <Command>SMOOTH</Command>
+  <Include>./report/header.xml</Include>
+  <Line />
+  <Line align="LEFT" font="FONT_A">
+    <Variable name="DISTRIBUTION_MODE" datatype="STRING" format="-4" font="FONT_A_HW"/>
+	<Variable name="TABLE_NUMBER" datatype="STRING" format="-4" font="FONT_A_HW"/>
+	<Pad width="1" char=" " />
+	<Text font="FONT_A_HW">人数</Text>
+	<Pad width="1" char=" " />
+	<Variable name="CUSTOMER_COUNT" datatype="STRING" format="-2" font="FONT_A_HW"/>
+	<Pad width="1" char=" " />
+	<Variable name="ORDER_NUMBER" datatype="STRING" format="4" font="FONT_A_HW"/>
+  </Line>
+  <Line align="LEFT" font="FONT_A">
+    <Text>交易流水号：</Text>
+    <Variable name="ORDER_ID" datatype="STRING" format="-25"/>
+  </Line>
+  <Line align="LEFT" font="FONT_A">
+    <Text>订单时间：</Text>
+    <Variable name="DATETIME" datatype="STRING" format="-25"/>
+  </Line>
+  <Include>./report/order_items_42.xml</Include>
+  <Include>./report/order_total_42.xml</Include>
+  <Include>./report/payment_items_42.xml</Include>
+  <Line /> <Line />
+  <Include>./report/customer_info_42.xml</Include>
+  <Line /><Line />
+  <line>
+    <Text font="FONT_A_HW">备注：</Text>
+    <Variable name="MEMO" datatype="STRING" font="FONT_A_HW"/>
+  </line>
+  <Line /><Line />
+  <Include>./report/footer.xml</Include>
+  <Line /><Line />
+  <Command>CUT</Command>
+</Report>
+

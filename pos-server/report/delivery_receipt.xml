@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report>
+  <Command>INIT</Command>
+  <Command>SMOOTH</Command>
+  <Line align="CENTER" font="FONT_A_HW">
+	<Variable name="DELIVERY_SOURCE" datatype="STRING" font="FONT_A_HW"/>
+  </Line>
+  <Line />
+  <Line align="LEFT" font="FONT_A_HW">
+	<Pad width="7" char="=" />
+	<Variable name="ALREADY_PAYED" datatype="STRING" format="5" font="FONT_A_HW"/>
+	<Pad width="7" char="=" />
+  </Line>
+  <Line />
+  <Include>./report/header.xml</Include>
+  <Line />
+  <Line align="LEFT" font="FONT_A">
+    <Variable name="DISTRIBUTION_MODE" datatype="STRING" format="-18" font="FONT_A_HW"/>
+	<Pad width="2" char=" " />
+	<Variable name="ORDER_NUMBER" datatype="STRING" format="4" font="FONT_A_HW"/>
+  </Line>
+  <Line align="LEFT" font="FONT_A">
+    <Text>交易流水号：</Text>
+    <Variable name="ORDER_ID" datatype="STRING" format="-25"/>
+  </Line>
+  <Line align="LEFT" font="FONT_A">
+    <Text>订单时间：</Text>
+    <Variable name="DATETIME" datatype="STRING" format="-25"/>
+  </Line>
+  <Include>./report/order_items.xml</Include>
+  <Include>./report/order_total.xml</Include>
+  <Line />
+  <Include>./report/delivery_info.xml</Include>
+  <!-- <Include>.\report\payment_items.xml</Include> -->
+  <Line /> <Line />
+  <line>
+    <Text font="FONT_A_HW">备注：</Text>
+    <Variable name="MEMO" datatype="STRING" font="FONT_A_HW"/>
+  </line>
+  <Line /><Line />
+  <!-- <Include>.\report\customer_info.xml</Include>
+  <Line /><Line /> -->
+  <Include>./report/footer.xml</Include>
+  <Line /><Line />
+  <Command>CUT</Command>
+</Report>
+

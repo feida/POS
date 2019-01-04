@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report>
+  <Command>INIT</Command>
+  <Command>SMOOTH</Command>
+  <Line align="CENTER">
+    <Text font="FONT_A_HW">Test Page</Text>
+  </Line>
+  <Line />
+  <Line align="CENTER">
+    <Text font="FONT_A">This is a test page.</Text>
+  </Line>
+  <Line /><Line />
+  <Line align="CENTER">
+    <Text font="FONT_A_HW">测试页</Text>
+  </Line>
+  <Line />
+  <Line align="CENTER">
+    <Text font="FONT_A">这是一个测试页</Text>
+  </Line>
+  <Line /><Line />
+  <!--<Line align="LEFT" font="FONT_A">-->
+    <!--<Text>交易流水号：</Text>-->
+    <!--<Variable name="ORDER_ID" datatype="STRING" format="-25"/>-->
+  <!--</Line>-->
+  <!--<Line align="CENTER">-->
+    <!--<Barcode>-->
+      <!--&lt;!&ndash;<Text>123456</Text>&ndash;&gt;-->
+      <!--<Variable name="BARCODE" datatype="STRING" />-->
+    <!--</Barcode>-->
+  <!--</Line>-->
+  <Line /><Line />
+  <Command>CUT</Command>
+</Report>

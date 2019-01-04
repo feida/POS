@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report>
+  <Command>INIT</Command>
+  <Command>SMOOTH</Command>
+  <Line align="LEFT" font="FONT_A">
+    <Variable name="PLATFORM_NAME" datatype="STRING" format="-20" font="FONT_A_HW"/>
+    <Variable name="ORDER_NUMBER" datatype="STRING" format="4" font="FONT_A_HW"/>
+  </Line>
+  <Line align="LEFT" font="FONT_A">
+    <Text>交易流水号：</Text>
+    <Variable name="ORDER_ID" datatype="STRING" format="-25"/>
+  </Line>
+  <Line align="LEFT" font="FONT_A">
+    <Text>订单时间：</Text>
+    <Variable name="DATETIME" datatype="STRING" format="-25"/>
+  </Line>
+  <Line align="LEFT" font="FONT_A">
+    <Pad width="48" char="-" />
+  </Line>
+  <Lines datasource="ITEMS">
+    <Line align="LEFT" font="FONT_A">
+      <Variable name="ARTICLE_NAME" datasource="ITEMS" datatype="STRING" format="-20" font="FONT_A_HW"/>
+      <Variable name="ARTICLE_COUNT" datasource="ITEMS" datatype="INT" format="4" font="FONT_A_HW"/>
+    </Line>
+  </Lines>
+  <Line align="LEFT" font="FONT_A">
+    <Pad width="48" char="-" />
+  </Line>
+  <line>
+    <Text font="FONT_A_HW">备注：</Text>
+    <Variable name="MEMO" datatype="STRING" font="FONT_A_HW"/>
+  </line>
+  <Line /><Line />
+  <Command>CUT</Command>
+</Report>
+

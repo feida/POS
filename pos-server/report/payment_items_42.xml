@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report>
+  <Lines datasource="PAYMENT_ITEMS">
+    <Line align="LEFT" font="FONT_A">
+	  <Pad width="18" char=" " />
+	  <Variable name="PAYMENT_MODE" datasource="PAYMENT_ITEMS" datatype="STRING" format="-14"/>
+      <Variable name="SUBTOTAL" datasource="PAYMENT_ITEMS" datatype="DECIMAL" format="10"/>
+	</Line>
+  </Lines>
+</Report>

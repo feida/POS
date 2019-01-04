@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report>
+  <Command>IMAGE_NV</Command>
+  <Line align="CENTER">
+      <Variable name="RESTAURANT_NAME" datatype="STRING" font="FONT_A_HW"/>
+  </Line>
+  <Line />
+  <Line align="CENTER">
+	<Variable name="RESTAURANT_ADDRESS" datatype="STRING" font="FONT_A"/>
+  </Line>
+  <Line align="CENTER" font="FONT_A">
+    <Text>电话：</Text>
+	<Variable name="RESTAURANT_TEL" datatype="STRING"/>
+  </Line>
+</Report>

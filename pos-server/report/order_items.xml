@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report>
+  <Line align="LEFT" font="FONT_A">
+    <Pad width="48" char="-" />
+  </Line>
+  <Line align="LEFT" font="FONT_A">
+	<Text>餐品名称</Text>
+	<Pad width="26" char=" "/>
+	<Text>数量</Text>
+	<Pad width="6" char=" "/>
+	<Text>小计</Text>
+  </Line>
+  <Line align="LEFT" font="FONT_A">
+    <Pad width="48" char="-" />
+  </Line>
+  <Lines datasource="ITEMS">
+    <Line align="LEFT" font="FONT_A">
+	  <Variable name="ARTICLE_NAME" datasource="ITEMS" datatype="STRING" format="-30"/>
+	  <Variable name="ARTICLE_COUNT" datasource="ITEMS" datatype="INT" format="8"/>
+      <Variable name="SUBTOTAL" datasource="ITEMS" datatype="DECIMAL" format="10"/>
+	</Line>
+  </Lines>
+  <Line align="LEFT" font="FONT_A">
+    <Pad width="48" char="-" />
+  </Line>
+</Report>

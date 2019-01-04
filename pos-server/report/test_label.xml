@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report>
+  <Page Width="40" Height="30" Gap="2">
+    <Barcode X="20" Y="20" font="128" Height="100" showText="1">
+	  <Text>Barcode Test</Text>
+	</Barcode>
+    <Line X="20" Y="150" font="3">
+      <Text>Printer Font Test</Text>
+    </Line>
+	<Line X="20" Y="180" font="TSS24.BF2">
+      <Text>中文字体测试</Text>
+    </Line>
+  </Page>
+</Report>

@@ -1,0 +1,11 @@
+{
+    "host": "139.196.222.42",
+    "port": 8580,
+    "path": "/pos/LocalPosSyncData/",
+    "method": "POST",
+    "headers": {
+        "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "brandId" : "2f83afee7a0e4822a6729145dd53af33",
+    "shopId" : "8565844c69b94b0dbde38b0861df62c8"
+}

@@ -1,0 +1,179 @@
+{
+  "name": "resto-pos",
+  "main": "index.html",
+  "node-main": "posServer.js",
+  "manifestUrl": "",
+  "version": "1.8.2",
+  "packages": {
+    "version": "1.9.1",
+    "id": "333",
+    "addField": {
+      "isAddField": false,
+      "field": [
+        "create table tb_b(id TEXT, name TEXT, printer_id TEXT, shop_detail_id TEXT)"
+      ]
+    },
+    "versionDescription": [
+      "增加了小爱语言",
+      "修复了若干bug",
+      "增加智能选菜宫能",
+      "优化了推荐算法"
+    ],
+    "mac": {
+      "url": "http://localhost:8088/tools/releases/updapp/mac/updapp.zip"
+    },
+    "win": {
+      "url": "http://localhost:8088/tools/releases/updapp/win/updapp.zip"
+    },
+    "linux32": {
+      "url": "http://localhost:8088/tools/releases/updapp/linux32/updapp.tar.gz"
+    }
+  },
+  "localVersion": {
+    "versionInfo": [
+      {
+        "version": "1.9.1",
+        "id": "333",
+        "addField": {
+          "isAddField": true,
+          "field": [
+            "create table tb_b(id TEXT, name TEXT, printer_id TEXT, shop_detail_id TEXT)"
+          ]
+        },
+        "versionDescription": [
+          "增加了小爱语言",
+          "修复了若干bug",
+          "增加智能选菜宫能",
+          "优化了推荐算法"
+        ],
+        "mac": {
+          "url": "http://localhost:8088/tools/releases/updapp/mac/updapp.zip"
+        },
+        "win": {
+          "url": "http://localhost:8088/tools/releases/updapp/win/updapp.zip"
+        },
+        "linux32": {
+          "url": "http://localhost:8088/tools/releases/updapp/linux32/updapp.tar.gz"
+        }
+      },
+      {
+        "id": "222",
+        "version": "1.9.0",
+        "addField": {
+          "isAddField": true,
+          "field": [
+            "create table tb_c(id TEXT, name TEXT, printer_id TEXT, shop_detail_id TEXT)"
+          ]
+        },
+        "versionDescription": [
+          "增加了小爱语言",
+          "修复了若干bug",
+          "增加智能选菜宫能",
+          "优化了推荐算法"
+        ],
+        "mac": {
+          "url": "http://localhost:8088/tools/releases/updapp/mac/updapp.zip"
+        },
+        "win": {
+          "url": "http://localhost:8088/tools/releases/updapp/win/updapp.zip"
+        },
+        "linux32": {
+          "url": "http://localhost:8088/tools/releases/updapp/linux32/updapp.tar.gz"
+        }
+      },
+      {
+        "id": "111",
+        "version": "1.8.9",
+        "addField": {
+          "isAddField": true,
+          "field": [
+            "create table tb_d(id TEXT, name TEXT, printer_id TEXT, shop_detail_id TEXT)"
+          ]
+        },
+        "versionDescription": [
+          "增加了小爱语言",
+          "修复了若干bug",
+          "增加智能选菜宫能",
+          "优化了推荐算法"
+        ],
+        "mac": {
+          "url": "http://localhost:8088/tools/releases/updapp/mac/updapp.zip"
+        },
+        "win": {
+          "url": "http://localhost:8088/tools/releases/updapp/win/updapp.zip"
+        },
+        "linux32": {
+          "url": "http://localhost:8088/tools/releases/updapp/linux32/updapp.tar.gz"
+        }
+      }
+    ]
+  },
+  "nodejs": true,
+  "single-instance": true,
+  "version": "1.9.1",
+  "private": true,
+  "window": {
+    "title": "resto-pos",
+    "icon": "logo.png",
+    "position": "center",
+    "width": 1024,
+    "height": 768
+  },
+  "webkit": {
+    "plugin": true
+  },
+  "dependencies": {
+    "async": "2.6.0",
+    "compare-versions": "3.0.0",
+    "express": "3.4.8",
+    "fs-extra": "^7.0.0",
+    "iconv-lite": "*",
+    "lodash": "4.17.4",
+    "minimist": "^1.2.0",
+    "moment": "^2.19.1",
+    "node-webkit-updater": "^0.3.3",
+    "node-xlsx": "^0.12.0",
+    "nodemon": "^1.18.3",
+    "pomelo": "2.2.5",
+    "queue-fun": "^0.3.2",
+    "request": "^2.87.0",
+    "sequelize": "^4.28.6",
+    "sqlite3": "3.1.8",
+    "underscore": "^1.9.1",
+    "unzip": "^0.1.11",
+    "uuid": "3.0.1",
+    "ws": "^5.0.0",
+    "xmldom": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "build --win --x86 --mirror https://npm.taobao.org/mirrors/nwjs/ .",
+    "init-dev": "cd app/dao/sqlite/pos && node init.js  --env dev --init yes&& cd ../../../..",
+    "init-box": "cd app/dao/sqlite/pos && node init.js  --env box --init yes&& cd ../../../..",
+    "init-pro": "cd app/dao/sqlite/pos && node init.js  --env pro && cd ../../../..",
+    "dev": "nodemon posServer.js  --env dev",
+    "box": "node posServer.js  --env box"
+  },
+  "build": {
+    "appId": "resto-pos",
+    "nwVersion": "0.14.7",
+    "targets": [
+      "zip",
+      "nsis7z"
+    ],
+    "strippedProperties": [
+      "build"
+    ],
+    "outputPattern": "${NAME} ${VERSION} ${PLATFORM} ${ARCH}",
+    "win": {
+      "productName": "resto-pos",
+      "companyName": "Resto-Plus",
+      "copyright": "copyright Resto-Plus",
+      "icon": "assets/logo.ico"
+    },
+    "nsis": {
+      "installDirectory": "$PROGRAMFILES\\${_COMPANYNAME}\\${_APPNAME}",
+      "diffUpdaters": true
+    }
+  }
+}

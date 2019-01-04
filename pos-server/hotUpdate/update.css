@@ -1,0 +1,155 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    background-color: #eeeeee;
+}
+
+.logo {
+    width: 400px;
+    /* width / height = 5.4*/
+    height: 75px;
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+
+img {
+    margin-top: -43px;
+}
+
+.content {
+    /*margin-top: 80px;*/
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 270px;
+}
+.button-confirm {
+    width: 322px;
+    height: 45px;
+    background: #000;
+    border-radius: 8px;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    /*left: 30px;*/
+    left: 89px;
+}
+.button-confirm span {
+    font-size: 16px;
+    color: #fff;
+    line-height: 45px;
+}
+.right-info {
+    width: 294px;
+    height: 40px;
+    background-color: #000;
+    color: #fff;
+    line-height: 40px;
+    position: absolute;
+    right: 0;
+    top: 44px;
+    border-radius: 45px 0 0 45px;
+}
+.version-list {
+    text-align: left;
+    padding-left: 30px;
+}
+.version-list h5 {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 5px;
+}
+.version-list span {
+    font-size: 13px;
+    color:#bbb;
+    display: block;
+}
+
+.version-list .auto {
+    height: 130px;
+    overflow-y: auto;
+}
+.pro-container{
+    margin: 0 auto;
+
+}
+/* PROGRESS */
+.progress {
+    /*background-color: #e5e9eb;*/
+    /*height: 0.25em;*/
+    /*position: relative;*/
+    /*margin-left: 20%;*/
+    /*margin-top: 20%;*/
+    /*width: 24em;*/
+    /*height: 400px;*/
+    width: 400px;
+    margin: 142px auto 0px auto;
+    /*background: #fff;*/
+    position: relative
+}
+.loading {
+    position: relative;
+}
+.loading span {
+    position: absolute;
+    top: 150px;
+    left: 180px;
+    color: #fff;
+}
+.progress-bar {
+    animation-duration: 3s;
+    /*animation-name: width;*/
+    width: 0%;
+    background-image: linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+    background-size: 24em 0.25em;
+    height: 100%;
+    position: relative;
+}
+.progress-shadow {
+    background-image: linear-gradient(to bottom, #eaecee, transparent);
+    height: 4em;
+    position: absolute;
+    top: 100%;
+    transform: skew(45deg);
+    transform-origin: 0 0;
+    width: 100%;
+}
+
+/* ANIMATIONS */
+/*@keyframes width {*/
+/*0%, 100% {*/
+/*transition-timing-function: cubic-bezier(1, 0, 0.65, 0.85);*/
+/*}*/
+/*0% {*/
+/*width: 0;*/
+/*}*/
+/*50% {*/
+/*width: 50%;*/
+/*}*/
+/*100% {*/
+/*width: 100%;*/
+/*}*/
+/*}*/
+
+.show-update-text{
+    margin-top: 15px;
+}
+
+
+
+.version-wrap {
+    text-align: center;
+    color: #999;
+    text-align: center;
+
+    padding-bottom: 10px;
+    margin: 0 auto;
+}
+
+.version-wrap > p {
+    font-size: 8px;
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report>
+  <Line align="LEFT" font="FONT_A">
+	<Text>总计</Text>
+	<Pad width="24" char=" " />
+	<Variable name="ARTICLE_COUNT" datatype="INT" format="5"/>
+    <Variable name="ORIGINAL_AMOUNT" datatype="DECIMAL" format="9"/>
+  </Line>
+  <Line align="LEFT" font="FONT_A">
+	<Text>折扣</Text>
+    <Variable name="REDUCTION_AMOUNT" datatype="STRING" format="38"/>
+  </Line>
+  <Line align="LEFT" font="FONT_A">
+    <Pad width="42" char="-" />
+  </Line>
+  <Line align="LEFT" font="FONT_A_H">
+	<Text>应付</Text>
+    <Variable name="PAYMENT_AMOUNT" datatype="STRING" format="38"/>
+  </Line>
+</Report>

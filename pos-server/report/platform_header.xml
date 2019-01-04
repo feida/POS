@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report>
+  <Command>IMAGE_NV</Command>
+  <Line align="CENTER" font="FONT_A_HW">
+      <Text >------</Text>
+          <Variable name="PAYTYPE" datatype="STRING"  font="FONT_A_HW" />
+      <Text >-------</Text>
+  </Line>
+    <Line/>
+  <Line align="CENTER">
+      <Variable name="RESTAURANT_NAME" datatype="STRING" font="FONT_A_HW"/>
+  </Line>
+    <Line/>
+</Report>

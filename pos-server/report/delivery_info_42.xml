@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report>
+  <Line align="LEFT" font="FONT_A_HW">
+    <Text font="FONT_A_HW">收货地址：</Text>
+	<Variable name="DELIVERY_ADDRESS" datatype="STRING" format="-16" font="FONT_A_HW" />
+  </Line>
+  <Line align="LEFT" font="FONT_A_HW">
+	<Variable name="CONTACT_NAME" datatype="STRING" format="-21" font="FONT_A_HW" />
+  </Line>
+  <Line align="LEFT" font="FONT_A_HW">
+	<Variable name="CONTACT_TEL" datatype="STRING" format="-21" font="FONT_A_HW" />
+  </Line>
+</Report>
