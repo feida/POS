@@ -1,0 +1,96 @@
+body, div,button, i, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4, h5, h6, i, b, textarea, button, input, select, figure, figcaption {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-style: normal;
+  text-decoration: none;
+  border: none;
+  font-weight: normal;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+a:hover, a:visited, a:link, a:active {
+  color: black;
+}
+.el-input-group__append, .el-input-group__prepend{
+  background-color: black;
+  border: 1px solid black;
+}
+.el-loading-mask {
+  background-color: rgba(255,255,255,.99);
+}
+/*  修改 table detail 页面下 checkbox 的 elementUI 默认样式   begin */
+.table-detail .el-checkbox__inner{
+  border-radius: 50%;
+}
+.table-detail .el-checkbox__input.is-checked .el-checkbox__inner {
+  background-color: #212121;
+  border-color: #212121;
+}
+.table-detail .el-checkbox__inner:hover {
+  border-color: #212121;
+}
+.remember-input .el-checkbox__input.is-checked .el-checkbox__inner {
+  background-color: #000;
+  border-color: #000;
+}
+.remember-input .el-checkbox__inner:hover{
+  border: 1px solid #000;
+}
+/*  修改 table detail 页面下 checkbox 的 elementUI 默认样式   end */
+.pay_el-form-item__label *{
+  /*color: red !important;*/
+  font-size: 20px !important;
+}
+.discount-input .el-input__inner{
+  text-align: right;
+  padding-right: 22px;
+}
+.not-discount-input .el-input__inner {
+  text-align: right;
+  padding-right: 22px;
+}
+
+/*@font-face {*/
+  /*font-family: 'SourceHanSansCN-Medium';*/
+  /*src: local('fontName Regular'),*/
+  /*local('SourceHanSansCN-Medium.otf'),*/
+  /*url('./fonts/SourceHanSansCN-Medium.otf') format('woff')*/
+/*}*/
+/** {*/
+  /*font-family: "SourceHanSansCN-Medium"!important;*/
+/*}*/
+
+
+
+.pay-info-details {
+  height: 40%;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+}
+.pay-info-details > li {
+  height: 25%;
+}
+.pay-info-details > li > div {
+  height: 45px;
+  line-height: 45px;
+  margin-top: 5px;
+
+  font-size: 20px;
+  font-weight: bold;
+  color: #666;
+  text-indent: 10px;
+}
+
+.pay-info-details > li > div > p:nth-of-type(1){
+  display: inline-block;
+  height: 100%;
+  color:#666;
+}
+.pay-info-details > li > div > p:nth-of-type(2){
+  float: right;
+  margin-right: 20px;
+  height: 100%;
+  color:#999;
+}
