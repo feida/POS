@@ -134,7 +134,7 @@
     "node-webkit-updater": "^0.3.3",
     "node-xlsx": "^0.12.0",
     "nodemon": "^1.18.3",
-    "pomelo": "2.2.5",
+    "pomelo": "2.2.7",
     "queue-fun": "^0.3.2",
     "request": "^2.87.0",
     "sequelize": "^4.28.6",
