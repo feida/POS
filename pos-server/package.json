@@ -128,7 +128,7 @@
     "express": "3.4.8",
     "fs-extra": "^7.0.0",
     "iconv-lite": "*",
-    "lodash": "4.17.4",
+    "lodash": "4.17.19",
     "minimist": "^1.2.0",
     "moment": "^2.19.1",
     "node-webkit-updater": "^0.3.3",
